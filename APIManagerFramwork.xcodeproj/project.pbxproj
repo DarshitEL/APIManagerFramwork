@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2286C2CC2B15ED58005EF5AA /* APIManagerFramwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 2286C2CB2B15ED58005EF5AA /* APIManagerFramwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286C2DA2B15ED60005EF5AA /* Api-Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 2286C2D42B15ED60005EF5AA /* Api-Loader.json */; };
 		2286C2DB2B15ED60005EF5AA /* Api_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2286C2D62B15ED60005EF5AA /* Api_Manager.swift */; };
 		2286C2DC2B15ED60005EF5AA /* API_ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2286C2D72B15ED60005EF5AA /* API_ToastMessage.swift */; };
 		2286C2DD2B15ED60005EF5AA /* Api-Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2286C2D82B15ED60005EF5AA /* Api-Loader.swift */; };
+		22A5E2B02B15F640005CF921 /* Api-Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 22A5E2AF2B15F640005CF921 /* Api-Loader.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2286C2C82B15ED58005EF5AA /* APIManagerFramwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APIManagerFramwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2286C2CB2B15ED58005EF5AA /* APIManagerFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManagerFramwork.h; sourceTree = "<group>"; };
-		2286C2D42B15ED60005EF5AA /* Api-Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Api-Loader.json"; sourceTree = "<group>"; };
 		2286C2D62B15ED60005EF5AA /* Api_Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api_Manager.swift; sourceTree = "<group>"; };
 		2286C2D72B15ED60005EF5AA /* API_ToastMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_ToastMessage.swift; sourceTree = "<group>"; };
 		2286C2D82B15ED60005EF5AA /* Api-Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Api-Loader.swift"; sourceTree = "<group>"; };
+		22A5E2AF2B15F640005CF921 /* Api-Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Api-Loader.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,29 +53,13 @@
 		2286C2CA2B15ED58005EF5AA /* APIManagerFramwork */ = {
 			isa = PBXGroup;
 			children = (
-				2286C2D32B15ED60005EF5AA /* Resources */,
-				2286C2D52B15ED60005EF5AA /* Source */,
-				2286C2CB2B15ED58005EF5AA /* APIManagerFramwork.h */,
-			);
-			path = APIManagerFramwork;
-			sourceTree = "<group>";
-		};
-		2286C2D32B15ED60005EF5AA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2286C2D42B15ED60005EF5AA /* Api-Loader.json */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		2286C2D52B15ED60005EF5AA /* Source */ = {
-			isa = PBXGroup;
-			children = (
+				22A5E2AF2B15F640005CF921 /* Api-Loader.json */,
 				2286C2D62B15ED60005EF5AA /* Api_Manager.swift */,
 				2286C2D72B15ED60005EF5AA /* API_ToastMessage.swift */,
 				2286C2D82B15ED60005EF5AA /* Api-Loader.swift */,
+				2286C2CB2B15ED58005EF5AA /* APIManagerFramwork.h */,
 			);
-			path = Source;
+			path = APIManagerFramwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2286C2DA2B15ED60005EF5AA /* Api-Loader.json in Resources */,
+				22A5E2B02B15F640005CF921 /* Api-Loader.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

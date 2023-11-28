@@ -12,9 +12,8 @@ Pod::Spec.new do |spec|
     spec.author       = { "Darshit Patel" => "darshit.p@elaunchinfotech.in" }
     spec.swift_version = "4.0"
     spec.source       = { :git => "https://github.com/DarshitEL/APIManagerFramwork.git", :tag => "#{spec.version}" }
-    #spec.source_files = "APIManagerFramwork","APIManagerFramwork/**/*.{h,m,swift}","APIManagerFramwork/Source/**/*.{h,m,swift}"
-    #spec.resources = "APIManagerFramwork/Resources/**/*.{json}"
-    spec.source_files =
+    #spec.source_files = "APIManagerFramwork","APIManagerFramwork/**/*.{h,m,swift,json}","APIManagerFramwork/Source/**/*.{h,m,swift,json}"
+        #spec.source_files = "APIManagerFramwork","APIManagerFramwork/**/*.{h,m,swift}","APIManagerFramwork/Source/**/*.{h,m,swift}"
     spec.dependency 'lottie-ios'
     spec.dependency 'Toast-Swift'
     spec.dependency 'Alamofire'
