@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 
-class API_Manager{
+public class API_Manager{
     static let shared:API_Manager = API_Manager()
  
     
@@ -17,7 +17,7 @@ class API_Manager{
     private var currentDataRequest:DataRequest!
     
     
-    enum RESPONSE_TYPE{
+    public enum RESPONSE_TYPE{
         case SUCCESS
         case ERROR
     }
@@ -68,13 +68,13 @@ extension API_Manager{
 // GET Method
 extension API_Manager{
     
-    func GET_METHOD(requestURL:String,
-                    param:[String: Any] = [:],
-                    hedar:[String: String] = [:],
-                    isShowLoader:Bool = true,
-                    responseData:@escaping(_ responseType:RESPONSE_TYPE,
-                                           _ error:Error?,
-                                           _ responseDict:[String: Any]?) -> Void) {
+    public func GET_METHOD(requestURL:String,
+                           param:[String: Any] = [:],
+                           hedar:[String: String] = [:],
+                           isShowLoader:Bool = true,
+                           responseData:@escaping(_ responseType:RESPONSE_TYPE,
+                                                  _ error:Error?,
+                                                  _ responseDict:[String: Any]?) -> Void) {
         if checkInternetConnection(){
             if isShowLoader {API_Loader.shared.show()}
             
