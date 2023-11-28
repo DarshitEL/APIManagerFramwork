@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
     spec.description  = <<-DESC
                      This framwork allow to call any api direct with ALAMOFIRE and get response in JSON.
                      DESC
-    spec.homepage     = "https://github.com/DarshitEL"
+    spec.homepage     = "https://github.com/DarshitEL/APIManagerFramwork"
     spec.platform     = :ios, "12.0"
     spec.license      = { :type => "MIT", :file => "LICENSE" }
     spec.author       = { "Darshit Patel" => "darshit.p@elaunchinfotech.in" }
