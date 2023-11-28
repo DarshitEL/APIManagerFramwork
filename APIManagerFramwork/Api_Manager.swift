@@ -119,7 +119,7 @@ extension API_Manager{
 
 // Cancel Running Request Method
 extension API_Manager{
-    func cancelAllAlamofireRequests(responseData:@escaping ( _ status: Bool?) -> Void) {
+    public func cancelAllAlamofireRequests(responseData:@escaping ( _ status: Bool?) -> Void) {
         alamoFireManager.session.getTasksWithCompletionHandler {
             dataTasks, uploadTasks, downloadTasks in
             dataTasks.forEach { $0.cancel() }
