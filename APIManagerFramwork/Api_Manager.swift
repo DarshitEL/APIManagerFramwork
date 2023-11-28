@@ -10,7 +10,7 @@ import Alamofire
 
 
 public class API_Manager{
-    static let shared:API_Manager = API_Manager()
+    public static let shared:API_Manager = API_Manager()
  
     
     private var alamoFireManager = Alamofire.Session.default
@@ -128,5 +128,4 @@ extension API_Manager{
             responseData(true)
         }
     }
-    // change
 }

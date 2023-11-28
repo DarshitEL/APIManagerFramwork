@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
     spec.name         = "APIManagerFramwork"
-    spec.version      = "7.0.0"
+    spec.version      = "8.0.0"
     spec.summary      = "This pod allow to call api direct with alamofire and get response."
     spec.description  = <<-DESC
                      This framwork allow to call any api direct with ALAMOFIRE and get response in JSON.
