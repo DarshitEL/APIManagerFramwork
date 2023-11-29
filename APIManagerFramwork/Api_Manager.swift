@@ -266,7 +266,7 @@ extension API_Manager{
             if isShowLoader {API_Loader.shared.show()}
             
             alamoFireManager.upload(multipartFormData: { multipartFormData in
-                for (key, value) in arrAllMedia {
+                for (key, value) in allMedia {
                     if let imgdata = value as? Data{
                         
                         multipartFormData.append(imgdata,
