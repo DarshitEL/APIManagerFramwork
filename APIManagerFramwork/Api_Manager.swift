@@ -251,14 +251,14 @@ extension API_Manager{
 // MULTIPART Method
 extension API_Manager{
     
-    func MULTIPART_METHOD(requestURL:String,
-                          param:[String: Any] = [:],
-                          hedar:[String: String] = [:],
-                          arrAllMedia:[String:Any] = [:],
-                          isShowLoader:Bool = true,
-                          responseData:@escaping (_ responseType:RESPONSE_TYPE,
-                                                  _ error:Error?,
-                                                  _ responseDict:[String: Any]?) -> Void){
+    public func MULTIPART_METHOD(requestURL:String,
+                                 param:[String: Any] = [:],
+                                 hedar:[String: String] = [:],
+                                 allMedia:[String:Any] = [:],
+                                 isShowLoader:Bool = true,
+                                 responseData:@escaping (_ responseType:RESPONSE_TYPE,
+                                                         _ error:Error?,
+                                                         _ responseDict:[String: Any]?) -> Void){
         
         
         
