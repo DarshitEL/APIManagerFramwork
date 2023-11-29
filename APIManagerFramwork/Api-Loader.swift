@@ -31,8 +31,9 @@ class API_Loader:NSObject{
         loaderbgview.layer.cornerRadius = float_HalfLoaderHegith
         loaderbgview.clipsToBounds = true
         
+        let bundle = Bundle(for: API_Loader.self)
         var animationView:LottieAnimationView = LottieAnimationView()
-        animationView = LottieAnimationView.init(name: "Api-Loader")
+        animationView = LottieAnimationView.init(name: "Api-Loader",bundle: bundle)
         animationView.frame = CGRect(x: 0, y: 0, width:float_LoaderHegithWidth, height: float_LoaderHegithWidth)
         animationView.center = loaderbgview.center
         animationView.contentMode = .scaleAspectFit
