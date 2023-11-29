@@ -254,7 +254,6 @@ extension API_Manager{
     public func MULTIPART_METHOD(requestURL:String,
                                  param:[String: Any] = [:],
                                  hedar:[String: String] = [:],
-                                 allMedia:[String:Any] = [:],
                                  isShowLoader:Bool = true,
                                  responseData:@escaping (_ responseType:RESPONSE_TYPE,
                                                          _ error:Error?,
@@ -264,19 +263,27 @@ extension API_Manager{
             if isShowLoader {API_Loader.shared.show()}
             
             alamoFireManager.upload(multipartFormData: { multipartFormData in
-                for (key, value) in allMedia {
-                    if let imgdata = value as? Data{
+                for (key, value) in param {
+                    
+                    if let imgVal = value as? UIImage{
                         
-                        multipartFormData.append(imgdata,
+                        multipartFormData.append(imgVal.jpegData(compressionQuality: 0.75)!,
                                                  withName: key,
                                                  fileName: "\(Date().timeIntervalSince1970).jpeg",
-                                                 mimeType: self.getMimeType(fileExt: "image/jpeg"))
+                                                 mimeType: self.getMimeType(fileExt: "jpeg"))
                         
-                    } else if let urlVideo = value as? URL{
-                        let fileExt = (urlVideo.lastPathComponent.components(separatedBy: ".").last!).lowercased()
+                    }else if let dataVal = value as? Data{
+                        
+                        multipartFormData.append(dataVal,
+                                                 withName: key,
+                                                 fileName: "\(Date().timeIntervalSince1970).jpeg",
+                                                 mimeType: self.getMimeType(fileExt: "jpeg"))
+                        
+                    }else if let urlVal = value as? URL{
+                        let fileExt = (urlVal.lastPathComponent.components(separatedBy: ".").last!).lowercased()
                         var fileData:Data? = nil
                         do{
-                            fileData = try Data.init(contentsOf: urlVideo)
+                            fileData = try Data.init(contentsOf: urlVal)
                             multipartFormData.append(fileData!,
                                                      withName: key,
                                                      fileName: "\(Date().timeIntervalSince1970).\(fileExt)",
@@ -287,9 +294,6 @@ extension API_Manager{
                     }else if let strVal = value as? String{
                         multipartFormData.append(strVal.data(using: String.Encoding.utf8)!, withName: key)
                     }
-                }
-                for (key, value) in param {
-                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)
                 }
             },to: requestURL,method:.post,headers:getRequiredHTTPHeader(arrHedar: hedar)).responseString(completionHandler: {(responseString) in
                 
