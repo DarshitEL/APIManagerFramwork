@@ -255,6 +255,7 @@ extension API_Manager{
                                  param:[String: Any] = [:],
                                  hedar:[String: String] = [:],
                                  isShowLoader:Bool = true,
+                                 uploadProgress:((CGFloat)->Void)? = nil,
                                  responseData:@escaping (_ responseType:RESPONSE_TYPE,
                                                          _ error:Error?,
                                                          _ responseDict:[String: Any]?) -> Void){
@@ -267,7 +268,7 @@ extension API_Manager{
                     
                     if let imgVal = value as? UIImage{
                         
-                        multipartFormData.append(imgVal.jpegData(compressionQuality: 0.75)!,
+                        multipartFormData.append(imgVal.jpegData(compressionQuality: 0.1)!,
                                                  withName: key,
                                                  fileName: "\(Date().timeIntervalSince1970).jpeg",
                                                  mimeType: self.getMimeType(fileExt: "jpeg"))
@@ -295,7 +296,9 @@ extension API_Manager{
                         multipartFormData.append(strVal.data(using: String.Encoding.utf8)!, withName: key)
                     }
                 }
-            },to: requestURL,method:.post,headers:getRequiredHTTPHeader(arrHedar: hedar)).responseString(completionHandler: {(responseString) in
+            },to: requestURL,method:.post,headers:getRequiredHTTPHeader(arrHedar: hedar)).uploadProgress(queue: .main, closure: { progress in
+                uploadProgress?(progress.fractionCompleted)
+            }).responseString(completionHandler: {(responseString) in
                 
                 if isShowLoader {API_Loader.shared.hide()}
                 
