@@ -260,8 +260,6 @@ extension API_Manager{
                                                          _ error:Error?,
                                                          _ responseDict:[String: Any]?) -> Void){
         
-        
-        
         if checkInternetConnection(){
             if isShowLoader {API_Loader.shared.show()}
             
