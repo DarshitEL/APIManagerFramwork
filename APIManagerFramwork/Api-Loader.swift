@@ -24,7 +24,7 @@ class API_Loader:NSObject{
         
         let float_HalfLoaderHegith:CGFloat = float_LoaderHegithWidth / 2
         
-        var loaderbgview = AutoChangeColorView()
+        let loaderbgview = AutoChangeColorView()
         loaderbgview.frame = CGRect(x: bgview.frame.width/2 - float_HalfLoaderHegith,
                                     y: bgview.frame.height/2 - float_HalfLoaderHegith,
                                     width:float_LoaderHegithWidth,
