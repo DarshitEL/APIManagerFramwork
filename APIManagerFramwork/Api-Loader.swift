@@ -7,6 +7,7 @@
 
 import Foundation
 import Lottie
+import AutoChangeColor
 
 class API_Loader:NSObject{
     static let shared:API_Loader = API_Loader()
@@ -23,10 +24,12 @@ class API_Loader:NSObject{
         
         let float_HalfLoaderHegith:CGFloat = float_LoaderHegithWidth / 2
         
-        let loaderbgview = UIView(frame: CGRect(x: bgview.frame.width/2 - float_HalfLoaderHegith,
-                                                y: bgview.frame.height/2 - float_HalfLoaderHegith,
-                                                width:float_LoaderHegithWidth,
-                                                height: float_LoaderHegithWidth))
+        var loaderbgview = AutoChangeColorView()
+        loaderbgview.frame = CGRect(x: bgview.frame.width/2 - float_HalfLoaderHegith,
+                                    y: bgview.frame.height/2 - float_HalfLoaderHegith,
+                                    width:float_LoaderHegithWidth,
+                                    height: float_LoaderHegithWidth)
+        loaderbgview.isAnimated = true
         loaderbgview.backgroundColor = uicolor_LoaderBGColor
         loaderbgview.layer.cornerRadius = float_HalfLoaderHegith
         loaderbgview.clipsToBounds = true

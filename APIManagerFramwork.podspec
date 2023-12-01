@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
     spec.name         = "APIManagerFramwork"
-    spec.version      = "12.0.2"
+    spec.version      = "13.0.0"
     spec.summary      = "This pod allow to call api direct with alamofire and get response."
     spec.description  = <<-DESC
                      This framwork allow to call any api direct with ALAMOFIRE and get response in JSON.
@@ -18,4 +18,5 @@ Pod::Spec.new do |spec|
     spec.dependency 'lottie-ios'
     spec.dependency 'Toast-Swift'
     spec.dependency 'Alamofire'
+    spec.dependency 'AutoChangeColor'
 end
