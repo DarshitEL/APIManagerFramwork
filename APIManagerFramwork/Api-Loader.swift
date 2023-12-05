@@ -9,7 +9,7 @@ import Foundation
 import Lottie
 import AutoChangeColor
 
-class API_Loader:NSObject{
+public class API_Loader:NSObject{
     static let shared:API_Loader = API_Loader()
     private var bgview = UIView()
     
@@ -49,11 +49,11 @@ class API_Loader:NSObject{
         view.addSubview(bgview)
     }
     
-    func show(){
+    public func show(){
         showHUD(view: UIApplication.shared.windows[0])
     }
   
-    func hide(){
+    public func hide(){
         self.bgview.removeFromSuperview()
     }
 }

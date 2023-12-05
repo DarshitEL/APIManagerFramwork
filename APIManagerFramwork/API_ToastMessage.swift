@@ -8,10 +8,10 @@
 import Foundation
 import Toast_Swift
 
-class API_ToastMessage : NSObject{
+public class API_ToastMessage : NSObject{
     static let shared:API_ToastMessage = API_ToastMessage()
     
-    enum MSG_TYPE{
+    public enum MSG_TYPE{
         case success
         case error
         case waring
@@ -28,7 +28,7 @@ class API_ToastMessage : NSObject{
         }
     }
     
-    func show(msg:String,
+    public func show(msg:String,
               type:MSG_TYPE,
               duration:Double = 2.0,
               position:ToastPosition = .top){
@@ -43,8 +43,7 @@ class API_ToastMessage : NSObject{
         UIApplication.shared.windows[0].makeToast(msg,duration: duration,position: position,style: style)
     }
     
-    func hideAll(){
+    public func hideAll(){
         UIApplication.shared.windows[0].hideAllToasts()
     }
-    
 }
